@@ -17,7 +17,13 @@ export const useFirestore = () => {
     const onSubmit = async (e) => {
     e.preventDefault();
 
-      fetchUser(query)
+       const mungeQuery = (str) => {
+          return str.replace(/\s+/g, '').trim() 
+       }
+
+       const washedQuery = mungeQuery(query)
+       
+       fetchUser(washedQuery)
         .then(data => {
            console.log(data)
           if (data.status >= 400) {
@@ -29,7 +35,8 @@ export const useFirestore = () => {
             return;
           }
 
-          usersRef.doc()
+           usersRef.doc()
+             console.log(data)
             .set(data)
             .then(() => {
               setError(1)

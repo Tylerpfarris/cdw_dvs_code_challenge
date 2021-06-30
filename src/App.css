@@ -2,6 +2,8 @@
   text-align: center;
 }
 
+/*table*/
+
 table {
   width: 90vw;
   margin: auto;
@@ -22,6 +24,8 @@ tr {
   height: 2rem;
 }
 
+/* form */
+
 form {
   margin-top: 3rem;
 }
@@ -34,6 +38,8 @@ input {
   font-size: 1.8rem;
   background-color: #b9e0a5;
 }
+
+/* message */
 
 p{
   font-size: 1.3rem;
