@@ -1,7 +1,7 @@
   
 import { useEffect, useState } from "react";
 import { fetchUser } from "../utils/gitHubApi";
-import firebase from '../firebase';
+import firebase from '../firbase';
 
 
 export const useFirestore = () => {
