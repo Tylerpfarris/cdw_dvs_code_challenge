@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { fetchUser } from "../utils/gitHubApi";
 import { mungeQuery } from "../utils/mungeQuery";
-import firebase from '../firbase';
+import firebase from '../firebase';
 
 const usersRef = firebase.firestore().collection('users');
 
