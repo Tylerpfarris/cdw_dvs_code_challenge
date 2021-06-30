@@ -3,9 +3,10 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import "firebase/firestore";
 import userEvent from '@testing-library/user-event';
 import App from './App';
+import { mungeQuery } from '../../utils/mungeQuery';
 
 
-jest.mock('./hooks/useFirestore', () => ({
+jest.mock('../../hooks/useFirestore', () => ({
   useFirestore: () => ({
     loading: false, users: userData, error: 1, username: '', query: '', onSubmit: jest.fn(), setQuery: jest.fn() , setUsers: jest.fn() })
 }))
@@ -61,8 +62,18 @@ describe('App', () => {
   });
 })
 
-describe('utils tests', () => {
+describe('mungeQuery', () => {
   it('washes a username query of spaces and punctuations', () => {
-    
-  })
-})
+    const test = 'Test@#$!$!1 ';
+    const res = mungeQuery(test);
+    expect(res).toEqual('Test1');
+
+    const test2 = ' !@#$%^& Hey!@#$%^  ?';
+    const res2 = mungeQuery(test2);
+    expect(res2).toEqual('Hey');
+
+    const test3 = 't.........e.......s........ t  ';
+    const res3 = mungeQuery(test3);
+    expect(res3).toEqual('test');
+  });
+});
