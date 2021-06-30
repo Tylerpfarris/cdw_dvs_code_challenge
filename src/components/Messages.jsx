@@ -15,7 +15,9 @@ const Messages = ({ loading, error, username, query }) => {
           Error {query} not found.
         </p>
       ) : error === 1 ? (
-        <p data-testid="success-message">{username} added to the db.</p>
+        <p data-testid="success-message" style={{ color: 'green' }}>
+          {username} added to the db.
+        </p>
       ) : (
         <p>GitHub Users</p>
       )}

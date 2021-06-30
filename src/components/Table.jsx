@@ -4,9 +4,9 @@ import { mungeDateTime } from '../utils/mungeDateTime';
 
 function Table({ users }) {
   return (
-    <table aria-label="user-table" style={{ width: '90vw', margin: 'auto' }}>
+    <table aria-label="user-table">
       <thead>
-        <tr style={{ backgroundColor: '#FFE598', height: '2rem' }}>
+        <tr>
           <th>Username</th>
           <th>Name</th>
           <th>Public Repos</th>
@@ -16,7 +16,7 @@ function Table({ users }) {
           <th>Created At</th>
         </tr>
       </thead>
-      <tbody aria-label="table-body" style={{ backgroundColor: '#CCCCCC' }}>
+      <tbody aria-label="table-body">
         {users.map(
           ({
             id,
