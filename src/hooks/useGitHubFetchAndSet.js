@@ -37,9 +37,9 @@ export const useGitHubFetchAndSet = (users) => {
                   console.error(err)
                })
         })
-    setTimeout(() => {
-        setError(0)
-      }, 3500)
+      setTimeout(() => {
+         setError(0)
+         }, 3500)
       
       
     }
