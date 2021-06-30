@@ -1,10 +1,10 @@
 
 import React from 'react';
 import './App.css';
-import Form from './components/Form';
-import { useFirestore } from './hooks/useFirestore';
-import Messages from './components/Messages';
-import Table from './components/Table';
+import Form from '../Form';
+import { useFirestore } from '../../hooks/useFirestore';
+import Messages from '../Messages';
+import Table from '../Table';
 
 function App() {
 
