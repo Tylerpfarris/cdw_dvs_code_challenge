@@ -39,7 +39,7 @@ const userData = [
 describe('App', () => {
 
 
-  test('it makes an API call to GitHub and then upon hitting enter it saves it to the DB and displays success message', async () => {
+  it('makes an API call to GitHub and then upon hitting enter it saves it to the DB and displays success message', async () => {
     render(<App />);
 
     const searchBarEl = await screen.findByTestId('search-bar');
@@ -59,4 +59,10 @@ describe('App', () => {
     expect(tableBodyEl).toHaveTextContent('Tyler Farris')
   
   });
+})
+
+describe('utils tests', () => {
+  it('washes a username query of spaces and punctuations', () => {
+    
+  })
 })

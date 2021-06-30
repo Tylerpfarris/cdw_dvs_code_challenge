@@ -5,7 +5,8 @@ function Form({ onSubmit, setQuery }) {
   return (
     <form onSubmit={onSubmit}>
       <input
-        type="text"
+         type="text"
+         placeholder="Enter Username..."
         data-testid="search-bar"
         onChange={({ target }) => setQuery(target.value)}
       />
