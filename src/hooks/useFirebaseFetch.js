@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import firebase from '../firbase';
+import firebase from '../firebase';
 
 const usersRef = firebase.firestore().collection('users');
 
