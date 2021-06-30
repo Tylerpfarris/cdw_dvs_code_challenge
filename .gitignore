@@ -3,4 +3,4 @@ node_modules
 dist
 ui-debug.log
 firestore-debug.log
-firebase_debug.log
+firebase-debug.log
