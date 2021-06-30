@@ -14,11 +14,12 @@ export const useFirestore = () => {
    
    const usersRef = firebase.firestore().collection('users');
 
-    const onSubmit = async (e) => {
-    e.preventDefault();
+      const onSubmit = async (e) => {
+         e.preventDefault();
 
-       const mungeQuery = (str) => {
-          return str.replace(/\s+/g, '').trim() 
+      const mungeQuery = (str) => {
+         const washed = str.replace(/[.,/#!$@+<>?"'%^&*;:{}=\-_`~()]/g,"")
+         return washed.replace(/\s+/g, '').trim()
        }
 
        const washedQuery = mungeQuery(query)
@@ -36,7 +37,6 @@ export const useFirestore = () => {
           }
 
            usersRef.doc()
-             console.log(data)
             .set(data)
             .then(() => {
               setError(1)
